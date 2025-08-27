@@ -20,7 +20,7 @@
 
     // Mensaje con el código incluido
     const mensaje = encodeURIComponent(
-      `[Código ${codigoTracking}] Hola buenas quiero mi ussuarioo y el 30% mi nombre es: `
+      `Hola buenas quiero mi ussuarioo y el 30% mi nombre es: [Código ${codigoTracking}]`
     );
 
     // URL completa de WhatsApp
@@ -32,16 +32,12 @@
     // Armar URL para guardar en Sheets
     const urlRegistro = `${scriptURL}?codigo=${codigoTracking}&numero=${encodeURIComponent(elegido)}`;
 
-    // Guardar en Sheets y redirigir
+    // Guardar en Sheets y redirigir inmediatamente
     fetch(urlRegistro)
       .then(() => window.location.href = urlWhatsApp)
       .catch(() => window.location.href = urlWhatsApp);
   </script>
 </head>
 <body>
-  <div style="text-align:center; font-family:sans-serif; margin-top:100px;">
-    <h3>Conectando con WhatsApp...</h3>
-    <p>Por favor espera un momento.</p>
-  </div>
 </body>
 </html>
